@@ -39,6 +39,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B58111DC1FB96BC300F6D1ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B58111DD1FB96BD300F6D1ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B58111DE1FB96BE500F6D1ED /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		B5941C261F70F1BC00A04254 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +79,9 @@
 		B5941C311F70F1BC00A04254 /* myNBA */ = {
 			isa = PBXGroup;
 			children = (
+				B58111DE1FB96BE500F6D1ED /* Controllers */,
+				B58111DC1FB96BC300F6D1ED /* Models */,
+				B58111DD1FB96BD300F6D1ED /* Views */,
 				B5941C351F70F1BC00A04254 /* AppDelegate.h */,
 				B5941C361F70F1BC00A04254 /* AppDelegate.m */,
 				B5941C381F70F1BC00A04254 /* ViewController.h */,
