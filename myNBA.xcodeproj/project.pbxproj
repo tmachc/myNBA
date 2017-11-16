@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B58111E11FBD2D7F00F6D1ED /* PlayerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B58111E01FBD2D7F00F6D1ED /* PlayerListViewController.m */; };
+		B58111E41FBD2DD800F6D1ED /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = B58111E31FBD2DD800F6D1ED /* Player.m */; };
+		B58111E71FBD37A500F6D1ED /* PlayerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B58111E61FBD37A500F6D1ED /* PlayerListCell.m */; };
 		B5941C341F70F1BC00A04254 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5941C331F70F1BC00A04254 /* main.m */; };
 		B5941C371F70F1BC00A04254 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5941C361F70F1BC00A04254 /* AppDelegate.m */; };
 		B5941C3A1F70F1BC00A04254 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5941C391F70F1BC00A04254 /* ViewController.m */; };
@@ -16,6 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B58111DF1FBD2D7F00F6D1ED /* PlayerListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerListViewController.h; sourceTree = "<group>"; };
+		B58111E01FBD2D7F00F6D1ED /* PlayerListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerListViewController.m; sourceTree = "<group>"; };
+		B58111E21FBD2DD800F6D1ED /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		B58111E31FBD2DD800F6D1ED /* Player.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		B58111E51FBD37A500F6D1ED /* PlayerListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerListCell.h; sourceTree = "<group>"; };
+		B58111E61FBD37A500F6D1ED /* PlayerListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerListCell.m; sourceTree = "<group>"; };
 		B5941C2F1F70F1BC00A04254 /* myNBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myNBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5941C331F70F1BC00A04254 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B5941C351F70F1BC00A04254 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,6 +51,8 @@
 		B58111DC1FB96BC300F6D1ED /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B58111E21FBD2DD800F6D1ED /* Player.h */,
+				B58111E31FBD2DD800F6D1ED /* Player.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -49,6 +60,8 @@
 		B58111DD1FB96BD300F6D1ED /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B58111E51FBD37A500F6D1ED /* PlayerListCell.h */,
+				B58111E61FBD37A500F6D1ED /* PlayerListCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -56,6 +69,8 @@
 		B58111DE1FB96BE500F6D1ED /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B58111DF1FBD2D7F00F6D1ED /* PlayerListViewController.h */,
+				B58111E01FBD2D7F00F6D1ED /* PlayerListViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -176,8 +191,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5941C3A1F70F1BC00A04254 /* ViewController.m in Sources */,
+				B58111E11FBD2D7F00F6D1ED /* PlayerListViewController.m in Sources */,
 				B5941C371F70F1BC00A04254 /* AppDelegate.m in Sources */,
 				B5941C341F70F1BC00A04254 /* main.m in Sources */,
+				B58111E71FBD37A500F6D1ED /* PlayerListCell.m in Sources */,
+				B58111E41FBD2DD800F6D1ED /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
