@@ -53,7 +53,7 @@
                     <tabBarItem key="tabBarItem" title="球员" id="jlU-GT-08f"/>
                     <connections>
                         <outlet property="tablePlayer" destination="otU-qo-OkI" id="Q8K-Mr-SbH"/>
-                        <segue destination="w4d-02-Syx" kind="show" id="koT-SP-NFP"/>
+                        <segue destination="w4d-02-Syx" kind="show" identifier="playerListToDetail" id="koT-SP-NFP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xdg-W4-yS6" userLabel="First Responder" sceneMemberID="firstResponder"/>

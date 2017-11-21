@@ -59,7 +59,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:false];
-    [self performSegueWithIdentifier:<#(nonnull NSString *)#> sender:<#(nullable id)#>]
+    [self performSegueWithIdentifier:@"playerListToDetail" sender:nil];
 }
 
 @end
