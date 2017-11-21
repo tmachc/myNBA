@@ -10,4 +10,6 @@
 
 @interface Player : NSObject
 
+@property (strong, nonatomic) NSString *playerName;
+
 @end

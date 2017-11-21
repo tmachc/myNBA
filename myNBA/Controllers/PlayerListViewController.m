@@ -8,11 +8,12 @@
 
 #import "PlayerListViewController.h"
 #import "PlayerListCell.h"
+#import "Player.h"
 
 @interface PlayerListViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *tablePlayer;
-@property (strong, nonatomic) NSArray *arrPlayer;
+@property (strong, nonatomic) NSArray<Player *> *arrPlayer;
 
 @end
 
@@ -20,14 +21,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    NSLog(@"%@", self.navigationController.viewControllers);
+    [self getDataFromNet];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - net
+
+- (void)getDataFromNet
+{
+    [[HCNetManager defaultManager] getRequestToUrl:@"player/list" params:nil complete:^(BOOL successed, NSDictionary *result) {
+        NSLog(@"%@ --> result = %@", successed?@"true":@"false", result);
+        if (successed) {
+            NSMutableArray *mary = [NSMutableArray array];
+            for (NSDictionary *dic in result[@"data"]) {
+                Player *player = [Player yy_modelWithJSON:dic];
+                [mary addObject:player];
+            }
+            self.arrPlayer = [mary copy];
+            [self.tablePlayer reloadData];
+        }
+    }];
 }
 
 /*

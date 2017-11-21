@@ -8,6 +8,7 @@ target 'myNBA' do
   # Pods for myNBA
 
 pod 'AFNetworking', '~> 3.0'
-pod 'SDWebImage', '~> 3.7.5' 
+pod 'SDWebImage', '~> 3.7.5'
+pod 'YYModel'
 
 end
