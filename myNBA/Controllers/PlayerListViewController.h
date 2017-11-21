@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlayerListViewController : UIViewController
+@interface PlayerListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

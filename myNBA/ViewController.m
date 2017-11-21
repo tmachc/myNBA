@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "AFNetworking.h"
 
 @interface ViewController ()
 
@@ -19,7 +18,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
+    //playerId=5185&
+    [[HCNetManager defaultManager] getRequestToUrl:@"player/baseInfo" params:@{@"playerId": @"5185"} complete:^(BOOL successed, NSDictionary *result) {
+        NSLog(@"%@ --> result = %@", successed?@"true":@"false", result);
+    }];
     
 }
 

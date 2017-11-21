@@ -6,6 +6,8 @@
 //  Copyright © 2017年 tmachc. All rights reserved.
 //
 
+#define kCellIdentifier_playerListCell @"playerListCell"
+
 #import <UIKit/UIKit.h>
 
 @interface PlayerListCell : UITableViewCell

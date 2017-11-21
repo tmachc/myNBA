@@ -7,8 +7,12 @@
 //
 
 #import "PlayerListViewController.h"
+#import "PlayerListCell.h"
 
 @interface PlayerListViewController ()
+
+@property (strong, nonatomic) IBOutlet UITableView *tablePlayer;
+@property (strong, nonatomic) NSArray *arrPlayer;
 
 @end
 
@@ -17,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSLog(@"%@", self.navigationController.viewControllers);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +39,27 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - table
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.arrPlayer.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PlayerListCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier_playerListCell forIndexPath:indexPath];
+    
+    
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:false];
+    [self performSegueWithIdentifier:<#(nonnull NSString *)#> sender:<#(nullable id)#>]
+}
 
 @end

@@ -17,6 +17,9 @@
 		B5941C3D1F70F1BC00A04254 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5941C3B1F70F1BC00A04254 /* Main.storyboard */; };
 		B5941C3F1F70F1BC00A04254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5941C3E1F70F1BC00A04254 /* Assets.xcassets */; };
 		B5941C421F70F1BC00A04254 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5941C401F70F1BC00A04254 /* LaunchScreen.storyboard */; };
+		B59AC6501FC27B8900125E35 /* HCNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AC64F1FC27B8900125E35 /* HCNetManager.m */; };
+		B59AC6541FC2BC8500125E35 /* UrlConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AC6531FC2BC8500125E35 /* UrlConfig.m */; };
+		B59AC6581FC3FFF700125E35 /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AC6571FC3FFF700125E35 /* PlayerDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,13 @@
 		B5941C3E1F70F1BC00A04254 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5941C411F70F1BC00A04254 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5941C431F70F1BC00A04254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B59AC64E1FC27B8900125E35 /* HCNetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCNetManager.h; sourceTree = "<group>"; };
+		B59AC64F1FC27B8900125E35 /* HCNetManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HCNetManager.m; sourceTree = "<group>"; };
+		B59AC6521FC2BC8500125E35 /* UrlConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UrlConfig.h; sourceTree = "<group>"; };
+		B59AC6531FC2BC8500125E35 /* UrlConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UrlConfig.m; sourceTree = "<group>"; };
+		B59AC6551FC3CA9B00125E35 /* myNBA_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myNBA_Prefix.pch; sourceTree = "<group>"; };
+		B59AC6561FC3FFF700125E35 /* PlayerDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
+		B59AC6571FC3FFF700125E35 /* PlayerDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +103,8 @@
 			children = (
 				B58111DF1FBD2D7F00F6D1ED /* PlayerListViewController.h */,
 				B58111E01FBD2D7F00F6D1ED /* PlayerListViewController.m */,
+				B59AC6561FC3FFF700125E35 /* PlayerDetailViewController.h */,
+				B59AC6571FC3FFF700125E35 /* PlayerDetailViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -121,6 +133,7 @@
 				B58111DE1FB96BE500F6D1ED /* Controllers */,
 				B58111DC1FB96BC300F6D1ED /* Models */,
 				B58111DD1FB96BD300F6D1ED /* Views */,
+				B59AC64C1FC2704E00125E35 /* Util */,
 				B5941C351F70F1BC00A04254 /* AppDelegate.h */,
 				B5941C361F70F1BC00A04254 /* AppDelegate.m */,
 				B5941C381F70F1BC00A04254 /* ViewController.h */,
@@ -129,6 +142,7 @@
 				B5941C3E1F70F1BC00A04254 /* Assets.xcassets */,
 				B5941C401F70F1BC00A04254 /* LaunchScreen.storyboard */,
 				B5941C431F70F1BC00A04254 /* Info.plist */,
+				B59AC6551FC3CA9B00125E35 /* myNBA_Prefix.pch */,
 				B5941C321F70F1BC00A04254 /* Supporting Files */,
 			);
 			path = myNBA;
@@ -140,6 +154,33 @@
 				B5941C331F70F1BC00A04254 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B59AC64C1FC2704E00125E35 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				B59AC6511FC2BC3700125E35 /* Common */,
+				B59AC64D1FC2708F00125E35 /* Manager */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		B59AC64D1FC2708F00125E35 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B59AC64E1FC27B8900125E35 /* HCNetManager.h */,
+				B59AC64F1FC27B8900125E35 /* HCNetManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		B59AC6511FC2BC3700125E35 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B59AC6521FC2BC8500125E35 /* UrlConfig.h */,
+				B59AC6531FC2BC8500125E35 /* UrlConfig.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,7 +314,10 @@
 				B5941C371F70F1BC00A04254 /* AppDelegate.m in Sources */,
 				B5941C341F70F1BC00A04254 /* main.m in Sources */,
 				B58111E71FBD37A500F6D1ED /* PlayerListCell.m in Sources */,
+				B59AC6501FC27B8900125E35 /* HCNetManager.m in Sources */,
 				B58111E41FBD2DD800F6D1ED /* Player.m in Sources */,
+				B59AC6581FC3FFF700125E35 /* PlayerDetailViewController.m in Sources */,
+				B59AC6541FC2BC8500125E35 /* UrlConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +451,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GAY7Z86N8D;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/myNBA/myNBA_Prefix.pch";
 				INFOPLIST_FILE = myNBA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tmachc.myNBA;
@@ -420,6 +465,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GAY7Z86N8D;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/myNBA/myNBA_Prefix.pch";
 				INFOPLIST_FILE = myNBA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tmachc.myNBA;
