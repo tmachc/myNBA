@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.tablePlayer registerClass:[PlayerListCell class] forCellReuseIdentifier:kCellIdentifier_playerListCell];
     [self getDataFromNet];
 }
 
@@ -29,16 +29,18 @@
 
 - (void)getDataFromNet
 {
+    WS(ws);
     [[HCNetManager defaultManager] getRequestToUrl:@"player/list" params:nil complete:^(BOOL successed, NSDictionary *result) {
         NSLog(@"%@ --> result = %@", successed?@"true":@"false", result);
         if (successed) {
             NSMutableArray *mary = [NSMutableArray array];
             for (NSDictionary *dic in result[@"data"]) {
                 Player *player = [Player yy_modelWithJSON:dic];
+                player.playerID = dic[@"id"];
                 [mary addObject:player];
             }
-            self.arrPlayer = [mary copy];
-            [self.tablePlayer reloadData];
+            ws.arrPlayer = [mary copy];
+            [ws.tablePlayer reloadData];
         }
     }];
 }
@@ -63,10 +65,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PlayerListCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier_playerListCell forIndexPath:indexPath];
-    
-    
+    cell.player = self.arrPlayer[indexPath.row];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [PlayerListCell cellHeight];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

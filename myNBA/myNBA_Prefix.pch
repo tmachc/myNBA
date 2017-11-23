@@ -17,10 +17,13 @@
 #import <Foundation/Foundation.h>
 #import "HCNetManager.h"
 #import "YYModel.h"
+#import "Masonry.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #endif
 
 #define WINDOW_HEIGHT [[UIScreen mainScreen] bounds].size.height
 #define WINDOW_WIDTH [UIScreen mainScreen].bounds.size.width
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 #endif /* myNBA_Prefix_pch */

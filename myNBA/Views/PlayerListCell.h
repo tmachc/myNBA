@@ -9,7 +9,12 @@
 #define kCellIdentifier_playerListCell @"playerListCell"
 
 #import <UIKit/UIKit.h>
+#import "Player.h"
 
 @interface PlayerListCell : UITableViewCell
+
+@property (nonatomic, strong) Player *player;
+
++ (CGFloat)cellHeight;
 
 @end
