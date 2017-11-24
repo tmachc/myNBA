@@ -31,18 +31,18 @@
 @property (strong, nonatomic) NSString *playerID;
 @property (strong, nonatomic) NSString *cnName;
 @property (strong, nonatomic) NSString *enName;
-@property (strong, nonatomic) NSString *capital;
+//@property (strong, nonatomic) NSString *capital;
 @property (strong, nonatomic) NSString *teamId;
 @property (strong, nonatomic) NSString *teamName;
 @property (strong, nonatomic) NSString *teamLogo;
-@property (strong, nonatomic) NSString *teamUrl;
+//@property (strong, nonatomic) NSString *teamUrl;
 @property (strong, nonatomic) NSString *jerseyNum;
 @property (strong, nonatomic) NSString *position;
-@property (strong, nonatomic) NSString *birthStateCountry;
-@property (strong, nonatomic) NSString *birth;
-@property (strong, nonatomic) NSString *height;
-@property (strong, nonatomic) NSString *weight;
+//@property (strong, nonatomic) NSString *birthStateCountry;
+//@property (strong, nonatomic) NSString *birth;
+//@property (strong, nonatomic) NSString *height;
+//@property (strong, nonatomic) NSString *weight;
 @property (strong, nonatomic) NSString *icon;
-@property (strong, nonatomic) NSString *detailUrl;
+//@property (strong, nonatomic) NSString *detailUrl;
 
 @end

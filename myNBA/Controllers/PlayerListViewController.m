@@ -13,7 +13,8 @@
 @interface PlayerListViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *tablePlayer;
-@property (strong, nonatomic) NSArray<Player *> *arrPlayer;
+@property (strong, nonatomic) NSArray<NSArray *> *arrPlayer;
+@property (strong, nonatomic) NSArray<NSString *> *arrCapital;
 
 @end
 
@@ -33,19 +34,38 @@
     [[HCNetManager defaultManager] getRequestToUrl:@"player/list" params:nil complete:^(BOOL successed, NSDictionary *result) {
         NSLog(@"%@ --> result = %@", successed?@"true":@"false", result);
         if (successed) {
+            NSMutableArray *maryAll = [NSMutableArray array];
+            NSMutableArray *maryCapital = [NSMutableArray array];
             NSMutableArray *mary = [NSMutableArray array];
+            NSString *capital = @"A";
+            [maryCapital addObject:capital];
             for (NSDictionary *dic in result[@"data"]) {
                 Player *player = [Player yy_modelWithJSON:dic];
                 player.playerID = dic[@"id"];
-                [mary addObject:player];
+                if ([capital isEqualToString:dic[@"capital"]]) {
+                    [mary addObject:player];
+                }
+                else {
+                    [maryAll addObject:[mary copy]];
+                    capital = dic[@"capital"];
+                    [maryCapital addObject:capital];
+                    mary = [NSMutableArray array];
+                    [mary addObject:player];
+                }
             }
-            ws.arrPlayer = [mary copy];
+            [maryAll addObject:[mary copy]];
+            ws.arrPlayer = [maryAll copy];
+            ws.arrCapital = [maryCapital copy];
             [ws.tablePlayer reloadData];
         }
     }];
 }
 
-/*
+- (void)processData
+{
+    
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -53,20 +73,43 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
 
 #pragma mark - table
 
+// 多少组
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.arrCapital.count;
+}
+
+// 全部的索引
+- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return self.arrCapital;
+}
+
+// 点击索引跳转哪个section
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+{
+    return [self.arrCapital indexOfObject:title];
+}
+
+// 租标题
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return self.arrCapital[section];
+}
+
+// 每组数量
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.arrPlayer.count;
+    return [self.arrPlayer[section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PlayerListCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier_playerListCell forIndexPath:indexPath];
-    cell.player = self.arrPlayer[indexPath.row];
-    
+    cell.player = self.arrPlayer[indexPath.section][indexPath.row];
     return cell;
 }
 
