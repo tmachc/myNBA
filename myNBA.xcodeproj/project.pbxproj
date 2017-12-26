@@ -20,6 +20,8 @@
 		B59AC6501FC27B8900125E35 /* HCNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AC64F1FC27B8900125E35 /* HCNetManager.m */; };
 		B59AC6541FC2BC8500125E35 /* UrlConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AC6531FC2BC8500125E35 /* UrlConfig.m */; };
 		B59AC6581FC3FFF700125E35 /* PlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59AC6571FC3FFF700125E35 /* PlayerDetailViewController.m */; };
+		B5CD26561FE9FA190060E199 /* TestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CD26551FE9FA190060E199 /* TestCollectionViewCell.m */; };
+		B5CD26591FEA41670060E199 /* TestCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CD26581FEA41670060E199 /* TestCollectionReusableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,10 @@
 		B59AC6551FC3CA9B00125E35 /* myNBA_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myNBA_Prefix.pch; sourceTree = "<group>"; };
 		B59AC6561FC3FFF700125E35 /* PlayerDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewController.h; sourceTree = "<group>"; };
 		B59AC6571FC3FFF700125E35 /* PlayerDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewController.m; sourceTree = "<group>"; };
+		B5CD26541FE9FA190060E199 /* TestCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCollectionViewCell.h; sourceTree = "<group>"; };
+		B5CD26551FE9FA190060E199 /* TestCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCollectionViewCell.m; sourceTree = "<group>"; };
+		B5CD26571FEA41670060E199 /* TestCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCollectionReusableView.h; sourceTree = "<group>"; };
+		B5CD26581FEA41670060E199 /* TestCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCollectionReusableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,10 @@
 				B5941C361F70F1BC00A04254 /* AppDelegate.m */,
 				B5941C381F70F1BC00A04254 /* ViewController.h */,
 				B5941C391F70F1BC00A04254 /* ViewController.m */,
+				B5CD26541FE9FA190060E199 /* TestCollectionViewCell.h */,
+				B5CD26551FE9FA190060E199 /* TestCollectionViewCell.m */,
+				B5CD26571FEA41670060E199 /* TestCollectionReusableView.h */,
+				B5CD26581FEA41670060E199 /* TestCollectionReusableView.m */,
 				B5941C3B1F70F1BC00A04254 /* Main.storyboard */,
 				B5941C3E1F70F1BC00A04254 /* Assets.xcassets */,
 				B5941C401F70F1BC00A04254 /* LaunchScreen.storyboard */,
@@ -313,7 +323,9 @@
 				B58111E11FBD2D7F00F6D1ED /* PlayerListViewController.m in Sources */,
 				B5941C371F70F1BC00A04254 /* AppDelegate.m in Sources */,
 				B5941C341F70F1BC00A04254 /* main.m in Sources */,
+				B5CD26561FE9FA190060E199 /* TestCollectionViewCell.m in Sources */,
 				B58111E71FBD37A500F6D1ED /* PlayerListCell.m in Sources */,
+				B5CD26591FEA41670060E199 /* TestCollectionReusableView.m in Sources */,
 				B59AC6501FC27B8900125E35 /* HCNetManager.m in Sources */,
 				B58111E41FBD2DD800F6D1ED /* Player.m in Sources */,
 				B59AC6581FC3FFF700125E35 /* PlayerDetailViewController.m in Sources */,

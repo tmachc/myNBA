@@ -49,7 +49,7 @@
                     [maryAll addObject:[mary copy]];
                     capital = dic[@"capital"];
                     [maryCapital addObject:capital];
-                    mary = [NSMutableArray array];
+                    [mary removeAllObjects];
                     [mary addObject:player];
                 }
             }

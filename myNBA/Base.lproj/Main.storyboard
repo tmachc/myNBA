@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="otR-Tr-kb0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="otR-Tr-kb0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -67,7 +67,7 @@
         <!--新闻-->
         <scene sceneID="Fjp-xy-QPW">
             <objects>
-                <viewController id="QMX-dv-a1k" sceneMemberID="viewController">
+                <viewController id="QMX-dv-a1k" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7WV-4t-rhx"/>
                         <viewControllerLayoutGuide type="bottom" id="001-hk-KdV"/>
@@ -75,13 +75,48 @@
                     <view key="view" contentMode="scaleToFill" id="ICH-qy-sEM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="94j-AT-ddS">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sq7-15-CvV">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EaE-Dx-kbr">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="QMX-dv-a1k" id="uJX-DW-58C"/>
+                                    <outlet property="delegate" destination="QMX-dv-a1k" id="Fxp-L7-7Zo"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="94j-AT-ddS" firstAttribute="leading" secondItem="ICH-qy-sEM" secondAttribute="leading" id="5Jo-0H-voJ"/>
+                            <constraint firstItem="001-hk-KdV" firstAttribute="top" secondItem="94j-AT-ddS" secondAttribute="bottom" id="9lz-Ft-hPX"/>
+                            <constraint firstAttribute="trailing" secondItem="94j-AT-ddS" secondAttribute="trailing" id="bll-fl-9dc"/>
+                            <constraint firstItem="94j-AT-ddS" firstAttribute="top" secondItem="7WV-4t-rhx" secondAttribute="bottom" id="xfH-7e-6Qs"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="新闻" id="sbx-e9-Opm"/>
+                    <connections>
+                        <outlet property="testCView" destination="94j-AT-ddS" id="tZj-0A-YXX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ap-qp-4oZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1103" y="-153"/>
+            <point key="canvasLocation" x="1101.5999999999999" y="-153.37331334332833"/>
         </scene>
         <!--Player Detail View Controller-->
         <scene sceneID="CpD-68-Rhd">
