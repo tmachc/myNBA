@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlayerDetailViewController : UIViewController
+@interface PlayerDetailViewController : ParentViewController
 
-
+@property (nonatomic, strong) NSString *playerId;
 
 @end

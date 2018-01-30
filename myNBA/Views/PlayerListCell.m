@@ -28,6 +28,7 @@
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         self.contentView.backgroundColor = [UIColor clearColor];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         if (!_viewContent) {
             _viewContent = [[UIView alloc] init];
             _viewContent.backgroundColor = [UIColor whiteColor];

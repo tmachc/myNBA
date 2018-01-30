@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="1101.5999999999999" y="-153.37331334332833"/>
         </scene>
-        <!--Player Detail View Controller-->
+        <!--球员详情页-->
         <scene sceneID="CpD-68-Rhd">
             <objects>
-                <viewController id="w4d-02-Syx" customClass="PlayerDetailViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="w4d-02-Syx" userLabel="球员详情页" customClass="PlayerDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TIx-o9-dkI"/>
                         <viewControllerLayoutGuide type="bottom" id="ABK-mw-niA"/>
@@ -129,17 +129,16 @@
                     <view key="view" contentMode="scaleToFill" id="PN7-Ao-Ugi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.85151891391700407" blue="0.98699319890490855" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7G-Ok-bEB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1935" y="526"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="722-GK-70x">
             <objects>
-                <tabBarController id="YUf-mt-1oL" sceneMemberID="viewController">
+                <tabBarController id="YUf-mt-1oL" customClass="MainTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Sm8-5H-bgR"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PHE-ZA-nNK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>

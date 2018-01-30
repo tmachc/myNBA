@@ -19,11 +19,15 @@
 #import "YYModel.h"
 #import "Masonry.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "ParentViewController.h"
 
 #endif
 
 #define WINDOW_HEIGHT [[UIScreen mainScreen] bounds].size.height
 #define WINDOW_WIDTH [UIScreen mainScreen].bounds.size.width
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+#define RGBCOLOR(r,g,b)     [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]         //RGB进制颜色值
+#define RGBACOLOR(r,g,b,a)  [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]       //RGBA进制颜色值
+#define MainColor RGBCOLOR(16,45,80)
 
 #endif /* myNBA_Prefix_pch */

@@ -9,6 +9,7 @@
 #import "PlayerListViewController.h"
 #import "PlayerListCell.h"
 #import "Player.h"
+#import "PlayerDetailViewController.h"
 
 @interface PlayerListViewController ()
 
@@ -68,10 +69,10 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.destinationViewController isKindOfClass:[PlayerDetailViewController class]]) {
+        ((PlayerDetailViewController *)segue.destinationViewController).playerId = ((Player *)sender).playerID;
+    }
 }
 
 #pragma mark - table
@@ -121,7 +122,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:false];
-    [self performSegueWithIdentifier:@"playerListToDetail" sender:nil];
+    [self performSegueWithIdentifier:@"playerListToDetail" sender:self.arrPlayer[indexPath.section][indexPath.row]];
 }
 
 @end
