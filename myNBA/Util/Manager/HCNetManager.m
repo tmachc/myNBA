@@ -82,12 +82,12 @@
                 [localUrl appendString:params.description];
             }
             [self GET:url parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
-                NSLog(@"\n===========downloadProgress===========\n%@ -->> \n%@", url, downloadProgress);
+                NSLog(@"\n===========downloadProgress===========\n%@\n%@ -->> \n%@", url, params, downloadProgress);
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                NSLog(@"\n===========response===========\n%@ -->> \n%@", url, responseObject);
+                NSLog(@"\n===========response===========\n%@\n%@ -->> \n%@", url, params, responseObject);
                 complete(true, responseObject);
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                NSLog(@"\n===========failure===========\n%@ -->> \n%@", url, error);
+                NSLog(@"\n===========failure===========\n%@\n%@ -->> \n%@", url, params, error);
                 complete(false, @{});
             }];
             break;

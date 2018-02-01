@@ -13,6 +13,8 @@
 		B58111E71FBD37A500F6D1ED /* PlayerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B58111E61FBD37A500F6D1ED /* PlayerListCell.m */; };
 		B584B53820202B10004ECBEE /* PlayerBaseInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B584B53720202B10004ECBEE /* PlayerBaseInfo.m */; };
 		B584B53B2020654D004ECBEE /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B584B53A2020654D004ECBEE /* MainTabBarController.m */; };
+		B584B53E2022E600004ECBEE /* PlayerStateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B584B53D2022E600004ECBEE /* PlayerStateCell.m */; };
+		B584B5412022ED66004ECBEE /* PlayerStateInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B584B5402022ED66004ECBEE /* PlayerStateInfo.m */; };
 		B5941C341F70F1BC00A04254 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5941C331F70F1BC00A04254 /* main.m */; };
 		B5941C371F70F1BC00A04254 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5941C361F70F1BC00A04254 /* AppDelegate.m */; };
 		B5941C3A1F70F1BC00A04254 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5941C391F70F1BC00A04254 /* ViewController.m */; };
@@ -42,6 +44,10 @@
 		B584B53720202B10004ECBEE /* PlayerBaseInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerBaseInfo.m; sourceTree = "<group>"; };
 		B584B5392020654D004ECBEE /* MainTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		B584B53A2020654D004ECBEE /* MainTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		B584B53C2022E600004ECBEE /* PlayerStateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerStateCell.h; sourceTree = "<group>"; };
+		B584B53D2022E600004ECBEE /* PlayerStateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerStateCell.m; sourceTree = "<group>"; };
+		B584B53F2022ED66004ECBEE /* PlayerStateInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerStateInfo.h; sourceTree = "<group>"; };
+		B584B5402022ED66004ECBEE /* PlayerStateInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerStateInfo.m; sourceTree = "<group>"; };
 		B5941C2F1F70F1BC00A04254 /* myNBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myNBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5941C331F70F1BC00A04254 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B5941C351F70F1BC00A04254 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +111,8 @@
 				B58111E31FBD2DD800F6D1ED /* Player.m */,
 				B584B53620202B10004ECBEE /* PlayerBaseInfo.h */,
 				B584B53720202B10004ECBEE /* PlayerBaseInfo.m */,
+				B584B53F2022ED66004ECBEE /* PlayerStateInfo.h */,
+				B584B5402022ED66004ECBEE /* PlayerStateInfo.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -116,6 +124,8 @@
 				B58111E61FBD37A500F6D1ED /* PlayerListCell.m */,
 				B59EC3D4201883B80082A44C /* PlayerBaseDetailView.h */,
 				B59EC3D5201883B80082A44C /* PlayerBaseDetailView.m */,
+				B584B53C2022E600004ECBEE /* PlayerStateCell.h */,
+				B584B53D2022E600004ECBEE /* PlayerStateCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -349,7 +359,9 @@
 				B58111E71FBD37A500F6D1ED /* PlayerListCell.m in Sources */,
 				B5CD26591FEA41670060E199 /* TestCollectionReusableView.m in Sources */,
 				B59EC3D6201883B80082A44C /* PlayerBaseDetailView.m in Sources */,
+				B584B53E2022E600004ECBEE /* PlayerStateCell.m in Sources */,
 				B59AC6501FC27B8900125E35 /* HCNetManager.m in Sources */,
+				B584B5412022ED66004ECBEE /* PlayerStateInfo.m in Sources */,
 				B584B53B2020654D004ECBEE /* MainTabBarController.m in Sources */,
 				B58111E41FBD2DD800F6D1ED /* Player.m in Sources */,
 				B59AC6581FC3FFF700125E35 /* PlayerDetailViewController.m in Sources */,

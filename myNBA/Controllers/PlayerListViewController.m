@@ -23,6 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tablePlayer.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tablePlayer.tableFooterView = [UIView new];
     [self.tablePlayer registerClass:[PlayerListCell class] forCellReuseIdentifier:kCellIdentifier_playerListCell];
     [self getDataFromNet];
 }

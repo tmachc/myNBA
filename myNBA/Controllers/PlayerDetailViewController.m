@@ -9,12 +9,15 @@
 #import "PlayerDetailViewController.h"
 #import "PlayerBaseDetailView.h"
 #import "PlayerBaseInfo.h"
+#import "PlayerStateInfo.h"
+#import "PlayerStateCell.h"
 
-@interface PlayerDetailViewController ()
+@interface PlayerDetailViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) PlayerBaseDetailView *baseDetail;
 @property (nonatomic, strong) UISegmentedControl *segControl;
+@property (nonatomic, strong) PlayerStateInfo *pStateInfo;
 @property (nonatomic, strong) UITableView *table;
 @property (nonatomic, strong) UILabel *labPlayerCName;
 @property (nonatomic, strong) UILabel *labPlayerEName;
@@ -84,14 +87,22 @@
     }];
     
     self.table = [[UITableView alloc] init];
-    self.table.backgroundColor = [UIColor greenColor];
+    self.table.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.table.tableFooterView = [UIView new];
+    self.table.backgroundColor = [UIColor whiteColor];
+    self.table.showsVerticalScrollIndicator = NO;
+    self.table.showsHorizontalScrollIndicator = NO;
+    self.table.bounces = NO;
+    self.table.dataSource = self;
+    self.table.delegate = self;
     [self.scrollView addSubview:self.table];
     [self.table mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(ws.baseDetail);
         make.top.mas_equalTo(ws.segControl.mas_bottom).offset(5);
-        make.height.mas_equalTo(WINDOW_HEIGHT - 64 - [PlayerBaseDetailView stateHeight] - 5 - 5 - ws.segControl.frame.size.height);
+        make.height.mas_equalTo(WINDOW_HEIGHT - 64 - [PlayerBaseDetailView stateHeight] - 5 - 5 - ws.segControl.frame.size.height + 1);
         make.bottom.mas_equalTo(ws.scrollView.mas_bottom);
     }];
+    NSLog(@" ----->>>>>>>>\n%@\n%@\n%f\n%f", NSStringFromCGRect(self.segControl.frame), NSStringFromCGRect(self.table.frame), WINDOW_HEIGHT - 64 - [PlayerBaseDetailView stateHeight] - 5 - 5 - ws.segControl.frame.size.height, WINDOW_HEIGHT);
     
     [self getDetailData];
     [self getStateDataWithType:1];
@@ -119,7 +130,14 @@
 {
     [[HCNetManager manager] getRequestToUrl:@"player/stats" params:@{@"playerId": self.playerId, @"tabType": @(type)} complete:^(BOOL successed, NSDictionary *result) {
         if (successed) {
-            
+//            if (type == 1) {
+//                self.pStateInfo = [PlayerStateInfo yy_modelWithJSON:result[@"data"]];
+//            }
+//            else {
+//
+//            }
+            self.pStateInfo = [PlayerStateInfo yy_modelWithJSON:result[@"data"]];
+            [self.table reloadData];
         }
     }];
 }
@@ -138,6 +156,105 @@
     [self.labPlayerCName removeFromSuperview];
     [self.labPlayerEName removeFromSuperview];
     [self.imgTeamLogo removeFromSuperview];
+}
+
+#pragma mark - table
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (self.segControl.selectedSegmentIndex == 0) {
+        if (self.pStateInfo.stats) {
+            if (section == 0) {
+                return [self.pStateInfo.stats[@"rows"] count] + 1;
+            }
+            else {
+                return [self.pStateInfo.lastMatches[@"rows"] count] + 1;
+            }
+        }
+    }
+    else {
+        if (self.pStateInfo.playoff) {
+            if (section == 0) {
+                return [self.pStateInfo.playoff[@"rows"] count] + 1;
+            }
+            else {
+                return [self.pStateInfo.reg[@"rows"] count] + 1;
+            }
+        }
+    }
+    return 0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WINDOW_WIDTH, 36)];
+    view.backgroundColor = [UIColor whiteColor];
+    UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(20, 8, WINDOW_WIDTH - 20, 22)];
+    lab.textColor = [UIColor grayColor];
+    lab.font = [UIFont systemFontOfSize:13];
+    lab.textAlignment = NSTextAlignmentLeft;
+    if (self.segControl.selectedSegmentIndex == 0) {
+        lab.text = section ? @"最近5场" : @"本赛季平均";
+    }
+    else {
+        lab.text = section ? @"常规赛" : @"季后赛";
+    }
+    [view addSubview:lab];
+    return view;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PlayerStateCell *cell = [[PlayerStateCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[NSString stringWithFormat:@"%ld", (long)indexPath.section]];
+    cell.indexPath = indexPath;
+    NSDictionary *dic;
+    CGFloat width = 0.0;
+    if (self.segControl.selectedSegmentIndex == 0) {
+        if (self.pStateInfo.stats) {
+            if (indexPath.section == 0) {
+                dic = self.pStateInfo.stats;
+                width = 80;
+            }
+            else {
+                dic = self.pStateInfo.lastMatches;
+                width = 140;
+            }
+        }
+    }
+    else {
+        if (self.pStateInfo.playoff) {
+            if (indexPath.section == 0) {
+                dic = self.pStateInfo.playoff;
+                width = 80;
+            }
+            else {
+                dic = self.pStateInfo.reg;
+                width = 80;
+            }
+        }
+    }
+    if (dic) {
+        if (indexPath.row) {
+            // row
+            [cell setState:dic[@"rows"][indexPath.row - 1] withFirstWidth:width];
+        }
+        else {
+            // head
+            [cell setState:dic[@"head"] withFirstWidth:width];
+        }
+    }
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [PlayerStateCell cellHeight];
 }
 
 @end
