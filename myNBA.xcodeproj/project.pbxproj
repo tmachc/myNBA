@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7DCA674FB045FB8872124148 /* libPods-myNBA.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FB31A4E1FE51DD398E4398 /* libPods-myNBA.a */; };
+		B5376FFB202C3B0600655E7D /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = B5376FFA202C3B0600655E7D /* test.m */; };
 		B58111E11FBD2D7F00F6D1ED /* PlayerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B58111E01FBD2D7F00F6D1ED /* PlayerListViewController.m */; };
 		B58111E41FBD2DD800F6D1ED /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = B58111E31FBD2DD800F6D1ED /* Player.m */; };
 		B58111E71FBD37A500F6D1ED /* PlayerListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B58111E61FBD37A500F6D1ED /* PlayerListCell.m */; };
@@ -34,6 +35,9 @@
 		211A944F342F65A067B8AF57 /* Pods-myNBA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myNBA.release.xcconfig"; path = "Pods/Target Support Files/Pods-myNBA/Pods-myNBA.release.xcconfig"; sourceTree = "<group>"; };
 		56FB31A4E1FE51DD398E4398 /* libPods-myNBA.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myNBA.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C98ABE4961E9EF2D34D3604 /* Pods-myNBA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myNBA.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myNBA/Pods-myNBA.debug.xcconfig"; sourceTree = "<group>"; };
+		B5376FF8202C2DFF00655E7D /* HCSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HCSingleton.h; sourceTree = "<group>"; };
+		B5376FF9202C3B0600655E7D /* test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
+		B5376FFA202C3B0600655E7D /* test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		B58111DF1FBD2D7F00F6D1ED /* PlayerListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerListViewController.h; sourceTree = "<group>"; };
 		B58111E01FBD2D7F00F6D1ED /* PlayerListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerListViewController.m; sourceTree = "<group>"; };
 		B58111E21FBD2DD800F6D1ED /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -210,6 +214,8 @@
 			children = (
 				B59AC64E1FC27B8900125E35 /* HCNetManager.h */,
 				B59AC64F1FC27B8900125E35 /* HCNetManager.m */,
+				B5376FF9202C3B0600655E7D /* test.h */,
+				B5376FFA202C3B0600655E7D /* test.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -219,6 +225,7 @@
 			children = (
 				B59AC6521FC2BC8500125E35 /* UrlConfig.h */,
 				B59AC6531FC2BC8500125E35 /* UrlConfig.m */,
+				B5376FF8202C2DFF00655E7D /* HCSingleton.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -354,6 +361,7 @@
 				B58111E11FBD2D7F00F6D1ED /* PlayerListViewController.m in Sources */,
 				B59EC3D920196E1D0082A44C /* ParentViewController.m in Sources */,
 				B5941C371F70F1BC00A04254 /* AppDelegate.m in Sources */,
+				B5376FFB202C3B0600655E7D /* test.m in Sources */,
 				B5941C341F70F1BC00A04254 /* main.m in Sources */,
 				B5CD26561FE9FA190060E199 /* TestCollectionViewCell.m in Sources */,
 				B58111E71FBD37A500F6D1ED /* PlayerListCell.m in Sources */,

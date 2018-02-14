@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "TestCollectionViewCell.h"
 #import "TestCollectionReusableView.h"
+#import "test.h"
 
 @interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -21,6 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSLog(@"%@", [test sharedtest]);
+    NSLog(@"%@", [test sharedtest]);
     
     //playerId=5185&
 //    [[HCNetManager defaultManager] getRequestToUrl:@"player/baseInfo" params:@{@"playerId": @"5185"} complete:^(BOOL successed, NSDictionary *result) {
